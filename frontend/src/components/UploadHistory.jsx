@@ -2,12 +2,12 @@ import React, { useState, useMemo } from 'react';
 import { FileText, Image as ImageIcon, ExternalLink, ArrowUpDown, Filter, SlidersHorizontal } from 'lucide-react';
 
 const CATEGORIES = [
-  { key: 'all', label: 'All Files', icon: '📁' },
-  { key: 'image', label: 'Images', icon: '🖼️' },
-  { key: 'pdf', label: 'PDFs', icon: '📄' },
-  { key: 'video', label: 'Videos', icon: '🎬' },
-  { key: 'audio', label: 'Audio', icon: '🎵' },
-  { key: 'other', label: 'Other', icon: '📎' },
+  { key: 'all', label: 'All Files'},
+  { key: 'image', label: 'Images'  },
+  { key: 'pdf', label: 'PDFs'},
+  { key: 'video', label: 'Videos'},
+  { key: 'audio', label: 'Audio' },
+  { key: 'other', label: 'Other' },
 ];
 
 const SORT_OPTIONS = [
@@ -33,8 +33,8 @@ function getFileIcon(mimeType) {
   switch (category) {
     case 'image': return <ImageIcon className="w-12 h-12 mb-2" />;
     case 'pdf': return <FileText className="w-12 h-12 mb-2" />;
-    case 'video': return <span className="text-4xl mb-2">🎬</span>;
-    case 'audio': return <span className="text-4xl mb-2">🎵</span>;
+    case 'video': return <span className="text-4xl mb-2"></span>;
+    case 'audio': return <span className="text-4xl mb-2"></span>;
     default: return <FileText className="w-12 h-12 mb-2" />;
   }
 }
@@ -119,7 +119,7 @@ const UploadHistory = ({ files, isLoading }) => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 px-4 gap-4">
         <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
-          <SlidersHorizontal className="w-5 h-5 text-indigo-500" />
+          <SlidersHorizontal className="w-5 h-5 text-primary" />
           Recent Uploads
           <span className="text-sm font-normal text-gray-400 ml-1">({files.length})</span>
         </h3>
@@ -157,7 +157,7 @@ const UploadHistory = ({ files, isLoading }) => {
                 flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium
                 transition-all duration-300 border
                 ${isActive
-                  ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white border-transparent shadow-lg shadow-indigo-500/25 scale-105'
+                  ? 'bg-gradient-to-r from-primary to-primary/50 text-white border-transparent shadow-lg shadow-indigo-500/25 scale-105'
                   : 'bg-white/60 text-gray-600 border-gray-200 hover:bg-white hover:border-indigo-300 hover:text-indigo-600'
                 }
               `}
